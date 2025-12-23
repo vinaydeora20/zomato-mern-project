@@ -10,7 +10,7 @@ app.use(cookieParser());
 // app.get("/", (req, res)=>{
 //     res.send("hello world")
 // });
-
+ 
 app.use('/auth/api', appRouter);
 app.use('/auth/food', foodRoutes);
 

@@ -80,7 +80,7 @@ const jwt = require('jsonwebtoken');
             message:"user Logout succesfully"
         })
     }
-
+    
     // food-partner api
     async function FoodPartnerRegister(req, res){
         const {fullName , email , password}= req.body

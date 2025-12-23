@@ -3,8 +3,18 @@ const router = express.Router();
 
 const foodController = require("../controllers/food.controller");
 const authMiddleWare = require("../middlewares/auth.middleware");
+const multer = require("multer");
 
-// post /api/food/ [protected]
-router.post('/', authMiddleWare.authFoodPartnerMiddleware , foodController.createFood)
+const upload = multer({
+    storage: multer.memoryStorage(),
+})
 
-module.exports = router
+// post /api/food/ [protected]:
+router.post('/', authMiddleWare.authFoodPartnerMiddleware,
+    upload.single("video"),
+    foodController.createFood)
+
+router.get('/', authMiddleWare.authUserMiddleware,
+    foodController.getFoodItems)
+
+module.exports = router;

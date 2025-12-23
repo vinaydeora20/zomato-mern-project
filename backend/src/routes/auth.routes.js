@@ -11,5 +11,6 @@ router.post('/user/logout', authControl.LogoutUser);
 router.post('/FoodPartner/register', authControl.FoodPartnerRegister);
 router.post('/FoodPartner/login', authControl.LoginFoodPartner);
 router.post('/FoodPartner/logout', authControl.LogoutFoodPartner);
+
 module.exports = router;
 
